@@ -1,0 +1,86 @@
+@import "./common.scss";
+
+.checkout {
+    font-family: $font;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 10px;
+}
+
+.address-part {
+    flex-basis: 48%;
+}
+
+.order-details {
+    flex-basis: 48%;
+
+    .action {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 15px;
+        
+        .btn-secondary {
+            margin-right: 5px;
+        }
+    }
+}
+
+.cart-details {
+    .book {
+        padding: 5px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        &__thumb {
+            flex-basis: 20%;
+            max-width: 150px;
+            img {
+                width: 100%;
+                max-height: 120px;
+            }
+        }
+
+        &__info {
+            flex-basis: 75%;
+            padding-left: 10px;
+
+            &__price {
+                font-size: 1.3rem;
+                text-align: right;
+            }
+        }
+    }
+
+    
+}
+
+.margin-r {
+    margin-right: 15px;
+}
+
+.form__action {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.invoice {
+    .item {
+        display: flex;
+        justify-content: space-between;
+        margin: 5px 0px;
+    }
+
+    .item--last {
+        border-bottom: 1px dashed #ddd;
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+    }
+}
+
+@media #{$small-and-down} {
+    .checkout {
+        flex-direction: column;
+    }
+}

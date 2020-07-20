@@ -1,0 +1,36 @@
+@import './common.scss';
+
+.nav {
+    height: 50px;
+    line-height: 50px;
+    background-color: $primary-btn-color;
+    color: #fff;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+
+    .logo {
+        padding-left: 5px;
+        font-size: 1.2rem;
+    }
+
+    .links {
+        ul {
+            margin: 0px;
+            padding: 0px;
+
+            li {
+                display: inline-block;
+                color: #b1b1b1;
+                margin: 0px 5px;
+                font-size: .9rem;
+
+                
+                &:hover {
+                    color: #fff;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

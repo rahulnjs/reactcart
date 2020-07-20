@@ -1,0 +1,44 @@
+@import "./common.scss";
+
+.orders {
+    font-family: $font;
+    padding: 0px 5px;
+
+    .order {
+        box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2);
+        border-radius: 2px;
+        margin: 8px 0px;
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            box-sizing: border-box;
+            padding: 5px 8px;
+            background-color: #e6e6e6;
+            color: #727272;
+            border-top-left-radius: 2px;
+            border-top-right-radius: 2px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .book {
+            padding: 5px;
+            display: flex;
+            flex-wrap: wrap;
+
+            &__thumb {
+                img {
+                    width: 100%;
+                    height: auto;
+                    max-width: 90px;
+                    height: 120px;
+                }
+            }
+
+            &__info {
+                padding-left: 10px;
+            }
+        }
+    }
+}

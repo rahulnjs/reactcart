@@ -1,0 +1,35 @@
+@import './common.scss';
+
+.container {
+    margin: 0px auto;
+    width: 80%;
+}
+
+
+@media #{$small-and-down} {
+    .container {
+        margin: 0px auto;
+        width: 100%;
+    }
+}
+
+@media #{$medium-and-up} {
+    .container {
+        margin: 0px auto;
+        width: 90%;
+    }
+}
+
+@media #{$large-and-up} {
+    .container {
+        margin: 0px auto;
+        width: 80%;
+    }
+}
+
+@media #{$extra-large-and-up} {
+    .container {
+        margin: 0px auto;
+        width: 80%;
+    }
+}

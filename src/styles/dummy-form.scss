@@ -1,0 +1,32 @@
+@import '../styles/common.scss';
+
+.dummy-form {
+
+
+
+    .element-row {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 10px 0px;
+    }
+
+    .element-col {
+
+        flex-grow: 1;
+
+        label {
+            display: block;
+            font-weight: 600;
+            color: gray;
+        }
+
+        input {
+            border: 1px solid #ddd;
+            padding: 10px 10px 8px 10px;
+            border-radius: 3px;
+            width: 100%;
+            font-family: $font;
+            box-sizing: border-box;
+        }
+    }
+}

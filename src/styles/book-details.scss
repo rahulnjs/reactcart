@@ -1,0 +1,114 @@
+@import "./common.scss";
+
+.book-details {
+
+    padding: 0px 5px;
+
+    .book {
+        display: flex;
+        font-family: $font;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        &__thumb {
+            flex-basis: 28%;
+            margin-right: 15px;
+            img {
+                width: 100%;
+                border: 2px solid #d7d4d4;
+                border-radius: 3px;
+                max-height: 350px;
+            }
+        }
+
+        &__info {
+            flex-basis: 68%;
+
+            &__title {
+                font-size: 1.5rem;
+                font-weight: 600;
+            }
+
+            &__rating {
+                text-align: right;
+
+                span {
+                    display: inline-block;
+                    background-color: #3498DB;
+                    color: #fff;
+                    padding: 2px 4px;
+                    font-size: .9rem;
+                    border-radius: 2px;
+                }
+            }
+
+            &__price {
+
+                i {
+                    color: #b6b6b6;
+                }
+
+                font-size: 2rem;
+                margin-bottom: 10px;
+            }
+
+            &__page-count {
+                &::before {
+                    content: 'Pages ';
+                    color: gray;
+                }
+            }
+
+            &__author {
+                &::before {
+                    content: 'By ';
+                    color: gray;
+                }
+            }
+
+            &__isbn {
+                &::before {
+                    content: 'ISBN ';
+                    color: gray;
+                }
+            }
+
+            &__pub-year {
+                &::before {
+                    content: 'Published Year ';
+                    color: gray;
+                }
+            }
+        }
+
+        &__action {
+            margin-top: 20px;
+            display: flex;
+
+            button {
+                margin-right: 10px;
+                max-width: 250px;
+                min-width: 120px;
+            }
+        }
+
+        &__desc {
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+    }
+
+    @media #{$small-and-down} {
+        .book {
+            &__thumb {
+                flex-basis: 100%;
+                margin-right: 0px;
+                box-sizing: border-box;
+            }
+
+            &__info {
+                flex-basis: 100%;
+            }
+        }
+    }
+}
