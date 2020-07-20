@@ -6,7 +6,7 @@ import { Book, AppState, AppActions } from '../types';
 
 import { connect, ConnectedProps } from 'react-redux';
 import { Dispatch, compose } from 'redux';
-import { addToCartAction } from '../redux/actions';
+import { addToCartAction, showToastAction } from '../redux/actions';
 import { EmptyBanner } from './Empty';
 
 const mapStateToProps = (state: AppState) => {
@@ -17,7 +17,8 @@ const mapStateToProps = (state: AppState) => {
 
 const mapDispatchToProps = (dispatch: Dispatch<AppActions>) => {
     return {
-        addToCart: (book: Book) => dispatch(addToCartAction(book))
+        addToCart: (book: Book) => dispatch(addToCartAction(book)),
+        showToast: (text: string) => dispatch(showToastAction(text))
     }
 }
 
@@ -25,13 +26,18 @@ let connector = connect(mapStateToProps, mapDispatchToProps);
 
 type Props = ConnectedProps<typeof connector>;
 
-export const Home: React.FC<Props> = ({ books = [], addToCart }) => {
+export const Home: React.FC<Props> = ({ books = [], addToCart, showToast }) => {
 
     let history = useHistory();
 
     function buyNow(book: Book) {
         addToCart(book);
         history.push('/cart');
+    }
+
+    function _addToCart(book: Book) {
+        addToCart(book);
+        showToast('Added to Cart');
     }
 
     return (
@@ -64,10 +70,10 @@ export const Home: React.FC<Props> = ({ books = [], addToCart }) => {
                         </div>
                         <div className="book__action-btn">
                             <div className="add-to-cart">
-                                <button className="btn-secondary" onClick={() => addToCart(book)}><i className="fas fa-cart-plus"></i></button>
+                                <button className="btn-secondary" onClick={() => _addToCart(book)}><i className="fas fa-cart-plus"></i></button>
                             </div>
                             <div className="buy-now">
-                                <button className="btn-primary" onClick={() => buyNow(book)}>Buy Now</button>
+                                <button className="btn-primary" onClick={() => buyNow(book)}><i className="fas fa-bolt"></i> Buy Now</button>
                             </div>
                         </div>
                     </div>

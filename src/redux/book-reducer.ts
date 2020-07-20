@@ -3,7 +3,6 @@ import { ACTION } from './constants';
 
 const books: Book[] = [];
 
-
 export const BookReducuer = (state = books, action: BooksLoadedAction)  => {
     switch(action.type) {
         case ACTION.LOAD_BOOKS: 

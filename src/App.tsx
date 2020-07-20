@@ -6,10 +6,12 @@ import BookDetails from './components/BookDetails';
 import Cart from './components/Cart';
 import Home from './components/Home';
 import MyOrders from './components/MyOrders';
+import Toast from './components/Toast';
 import { Header } from './components/Header';
-import './styles/app.scss';
 import { Footer } from './components/Footer';
 import store from './redux/store';
+
+import './styles/app.scss';
 
 function App() {
   
@@ -19,6 +21,7 @@ function App() {
       <Provider store={store}>
         <div className="App"> 
           <Header />
+          <Toast />
           <div className="container">
             <Route exact path="/" component={() => <Home />} />
             <Route exact path="/book/:id" component={() => <BookDetails />} />

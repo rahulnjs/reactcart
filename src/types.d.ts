@@ -59,17 +59,19 @@ export type BooksLoadedAction ={
 export type ShowTaostAction = {
     type: string,
     config: {
-        text: string,
-        delay: number
+        text: string
     }
 }
 
-export type AppActions = AddOrderAction | AddToCartAction | SimpleAction | BooksLoadedAction | ShowTaostAction;
+export type AppActions = AddOrderAction | AddToCartAction | SimpleAction | BooksLoadedAction;
 
 export type AppState = {
     cartItems?: CartItem[],
     books?: Book[],
     orders?: Order[],
-    showToast?: boolean
+    toast: {
+        show: boolean,
+        text: string
+    }
 };
 

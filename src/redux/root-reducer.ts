@@ -1,11 +1,13 @@
 import { combineReducers } from 'redux';
-import { CartReducuer } from './cart-reducer';
 import { OrderReducuer } from './order-reducer';
-import { BookReducuer } from './book-reducer';
+import { CartReducuer } from './cart-reducer';
+import { BookReducuer } from './book-reducer'
+import { ToastReducer } from './common-reducer';
 
 
 export const rootReducer = combineReducers({
     books: BookReducuer,
     cartItems: CartReducuer,
     orders: OrderReducuer,
+    toast: ToastReducer
 });

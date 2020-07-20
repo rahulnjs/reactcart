@@ -22,9 +22,10 @@ export const addToOrdersAction = (orders: Order[]): AppActions => {
 };
 
 
-export const loadBooksAction = (): SimpleAction => {
+export const loadBooksAction = (): BooksLoadedAction => {
     return {
-        type: ACTION.LOAD_BOOKS
+        type: ACTION.LOAD_BOOKS,
+        books: []
     };
 }
 
@@ -42,3 +43,21 @@ export const booksLoadFailed = (): SimpleAction => {
         type: ACTION.LOAD_BOOKS_FAILED
     };
 } 
+
+
+export const showToastAction = (text: string): ShowTaostAction => {
+    return {
+        type: ACTION.SHOW_TOAST,
+        config: {
+            text
+        }
+    }
+}
+
+
+export const hideToastAction = (): SimpleAction => {
+    return {
+        type: ACTION.HIDE_TOAST
+    }
+}
+

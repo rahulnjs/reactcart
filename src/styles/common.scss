@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css");
 
 $small-screen-up: 601px !default;
@@ -20,69 +20,101 @@ $secondary-btn-color: #545895;
 $font: "Nunito", sans-serif;
 
 body {
-    margin: 0;
-    font-family: $font;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background-color: #fafafa;
+  margin: 0;
+  font-family: $font;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fafafa;
 }
 
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .btn {
-    width: 100%;
-    border: 1px solid;
-    background-color: $primary-btn-color;
-    color: #fff;
-    font-family: $font;
-    padding: 5px 0px;
-    border-radius: 3px;
-    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  border: 1px solid;
+  background-color: $primary-btn-color;
+  color: #fff;
+  font-family: $font;
+  padding: 5px 0px;
+  border-radius: 3px;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.3);
 }
 
 .btn-primary {
-    @extend .btn;
-    border-color: #171717;
-    background-color: $primary-btn-color;
+  @extend .btn;
+  border-color: #171717;
+  background-color: $primary-btn-color;
 }
 
 .btn-secondary {
-    @extend .btn;
-    border-color: #454a69;
-    background-color: $secondary-btn-color;
+  @extend .btn;
+  border-color: #454a69;
+  background-color: $secondary-btn-color;
 }
 
 .disabled {
-    pointer-events: none;
-    opacity: .3;
+  pointer-events: none;
+  opacity: 0.3;
 }
-
 
 .footer {
-    margin-top: 40px;
-    line-height: 100px;
-    background-color: lighten($color: $primary-btn-color, $amount: 4);
+  margin-top: 40px;
+  line-height: 100px;
+  background-color: lighten($color: $primary-btn-color, $amount: 4);
+  color: #fff;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.empty-banner {
+  margin: 50px 0px;
+  text-align: center;
+
+  img {
+    width: 50%;
+    opacity: 0.3;
+    max-width: 300px;
+  }
+
+  .text {
+    text-transform: uppercase;
+    margin: 10px 0px;
+    color: #b8b8b8;
+  }
+}
+
+.toast {
+  position: fixed;
+  width: 100%;
+  text-align: center;
+
+  animation-name: bounce;
+  animation-delay: 0s;
+  animation-duration: .4s;
+  animation-iteration-count: 1;
+  animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+
+  span {
     color: #fff;
-    text-align: center;
-    font-size: .8rem;
+    background-color: #171717;
+    padding: 3px 10px;
+    border-radius: 2px;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);
+  }
 }
 
 
-.empty-banner {
-    margin: 50px 0px;
-    text-align: center;
-
-    img {
-        width: 50%;
-        opacity: .3;
-        max-width: 300px;
+@keyframes bounce {
+    0% {
+        top: -100px;
     }
 
-    .text {
-        text-transform: uppercase;
-        margin: 10px 0px;
-        color: #b8b8b8;
+    100% {
+      top: 70px;
     }
+
+
 }
