@@ -95,14 +95,17 @@
                 button {
                     border-top-left-radius: 0px;
                     border-bottom-left-radius: 0px;
-                    /*box-shadow: none !important;
-                    border-left: none;*/
                 }
             }
         }
     }
 
     @media #{$small-and-down} {
+
+        .book-list {
+            justify-content: center;
+        }
+
         .book {
             flex-basis: 46%;
             flex-shrink: 0;
@@ -149,5 +152,12 @@
             flex-basis: 19%;
             flex-shrink: 0;
         }
+    }
+}
+
+@media #{$small-and-down} {
+
+    .book-list {
+        justify-content: space-between;
     }
 }
